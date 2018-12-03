@@ -200,5 +200,5 @@ class gridLock(main.PygameGame):
 def __init__(self, rootNode, playerSpeed, enemySpeed, enemyNum, width=600, \
             height=400,fps=50,title="GridLock")
 """
-game = gridLock(10, 5, 3, 5, 3000, 1200, 150)
+game = gridLock(7, 8, 6, 5, 3000, 1200, 150)
 game.run()
