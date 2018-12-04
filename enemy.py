@@ -2,6 +2,17 @@ import random
 from player import Player
 
 class Enemy(Player):
+    def __init__(self, player, rootNode, grid, dictionary, color):
+        super().__init__(rootNode, grid, dictionary, color)
+        while player.getStart() == self.start or player.getEnd() == \
+            self.start:
+                self.start = random.randint(0,len(grid) - 1)
+        if grid[self.start][1] == None:
+            self.end = grid[self.start][3]
+        else:
+            self.end = grid[self.start][1]
+        self.currPos = dictionary[self.start]
+
     def optimalPath(self, player):
         start = self.start
         goal = player.getEnd()
