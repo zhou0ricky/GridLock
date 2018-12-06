@@ -7,8 +7,8 @@ from settingVars import settingVars
 import leaderboard
 
 # Colors
-white=(255, 255, 255)
-black=(0, 0, 0)
+white=(253, 245, 230)
+black=(15, 15, 15)
 gray=(50, 50, 50) 
 red=(255, 0, 0)
 green=(0, 255, 0)
@@ -16,10 +16,13 @@ blue=(0, 0, 255)
 yellow=(255, 255, 0)
 
 # Game Fonts
+#CITATION: I got this from https://www.fontsquirrel.com/
 font = "StressGenesis.otf"
 
+#CITATION: I got this from
 class Namescreen(main.PygameGame):
 # Text Renderer
+    #CITATION: I got this code from https://nerdparadise.com/programming/pygame/part5
     @staticmethod
     def text_format(message, textFont, textSize, textColor):
         newFont=pygame.font.Font(textFont, textSize)
@@ -48,6 +51,8 @@ class Namescreen(main.PygameGame):
         self.final = self.text_format(self.player, font, 200, white)
         self.final_rect = self.final.get_rect()
         if key == pygame.K_RETURN:
+            if self.player == "":
+                self.player = "no name"
             newscore = (self.player, self.score)
             leaderboard.addScores(newscore, settingVars.filename)
             board = leaderboard.Leaderboard(2000,1200)

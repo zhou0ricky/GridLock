@@ -1,6 +1,7 @@
 import pygame
 
 
+#CITATION: I got this from https://qwewy.gitbooks.io/pygame-module-manual/chapter1/framework.html
 class PygameGame(object):
 
     def init(self):

@@ -46,8 +46,8 @@ import difficulty
 import gamemode
 from settingVars import settingVars
 # Colors
-white=(255, 255, 255)
-black=(0, 0, 0)
+white=(253, 245, 230)
+black=(15, 15, 15)
 gray=(50, 50, 50)
 red=(255, 0, 0)
 green=(0, 255, 0)
@@ -55,11 +55,14 @@ blue=(0, 0, 255)
 yellow=(255, 255, 0)
 
 # Game Fonts
+# CITATIONS: I got this from https://www.fontsquirrel.com/
 font = "StressGenesis.otf"
 
+#CITATIONS: I got this from https://qwewy.gitbooks.io/pygame-module-manual/chapter1/framework.html
 class Leaderboard(main.PygameGame):
 
     # Text Renderer
+    #CITATION: I got this code from https://nerdparadise.com/programming/pygame/part5
     @staticmethod
     def text_format(message, textFont, textSize, textColor):
         newFont=pygame.font.Font(textFont, textSize)

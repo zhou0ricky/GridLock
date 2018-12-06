@@ -1,11 +1,11 @@
 cool beans,5
+star platinum,4
+bob ross,2
+grand chariot,2
+holy cow,2
 big bear,1
 great job,1
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
+bob,1
 BLANK,0
 BLANK,0
 BLANK,0

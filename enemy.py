@@ -1,6 +1,8 @@
 import random
 from player import Player
 
+
+#CITATION: I got this from https://qwewy.gitbooks.io/pygame-module-manual/chapter1/framework.html
 class Enemy(Player):
     def __init__(self, player, rootNode, grid, dictionary, color):
         super().__init__(rootNode, grid, dictionary, color)

@@ -5,8 +5,8 @@ import difficulty
 import gamemode
 
 # Colors
-white=(255, 255, 255)
-black=(0, 0, 0)
+white=(253, 245, 230)
+black=(15, 15, 15)
 gray=(50, 50, 50)
 red=(255, 0, 0)
 green=(0, 255, 0)
@@ -14,12 +14,14 @@ blue=(0, 0, 255)
 yellow=(255, 255, 0)
  
 # Game Fonts
+#CITATION: I got this from https://www.fontsquirrel.com/
 font = "StressGenesis.otf"
 
-
+#CITATION: I got this from https://qwewy.gitbooks.io/pygame-module-manual/chapter1/framework.html
 class Menu(main.PygameGame):
         
     # Text Renderer
+    #CITATION: I got this code from https://nerdparadise.com/programming/pygame/part5
     @staticmethod
     def text_format(message, textFont, textSize, textColor):
         newFont=pygame.font.Font(textFont, textSize)
@@ -38,6 +40,9 @@ class Menu(main.PygameGame):
         self.gamemode_rect = self.gamemode.get_rect()
         self.settings = self.text_format("Settings", font, 80, white)
         self.settings_rect = self.settings.get_rect()
+        self.grow = 0
+        self.truth = True
+        self.fps = 150
 
     def setDifficulty(self, mode):
         self.difficulty = mode
@@ -84,30 +89,46 @@ class Menu(main.PygameGame):
             self.settings = self.text_format("Settings", font, 80, white)
         self.settings_rect = self.settings.get_rect()
 
+    def timerFired(self, dt):
+        if self.truth == True:
+            self.grow += 5
+            if self.grow > 200:
+                self.truth = False
+        else:
+            self.grow -= 5
+            if self.grow <= 0:
+                self.truth = True
+
     def redrawAll(self, screen):
+        pygame.draw.circle(screen, white, (self.width//2, self.height//2), 800 + 3 *self.grow)
+
+        pygame.draw.circle(screen, black, (self.width//2, self.height//2), 750 + 2 *self.grow)
+
+        pygame.draw.circle(screen, white, (self.width//2, self.height//2), 700 + 2 *self.grow)
+        pygame.draw.circle(screen, black, (self.width//2, self.height//2), 550 +  self.grow //2)
         screen.blit(self.title, (self.width/2 -\
             (self.title_rect[2]/2), self.height // 6))
         
         if self.select == 0:
             pygame.draw.rect(screen, white, [self.width/2 - \
-                self.play_rect[2]/2 - 10 ,442,self.play_rect[2] + 10,100], 0)
+                self.play_rect[2]/2 - 10 ,542,self.play_rect[2] + 10,100], 0)
 
         if self.select == 1:
             pygame.draw.rect(screen, white, [self.width/2 - \
-                self.gamemode_rect[2]/2 - 10,592,\
+                self.gamemode_rect[2]/2 - 10,692,\
                 self.gamemode_rect[2]+ 10 ,100], 0)
 
         if self.select == 2:
             pygame.draw.rect(screen, white, [self.width/2 - \
-                self.settings_rect[2]/2-10,742,self.settings_rect[2]+10,100], 0)
+                self.settings_rect[2]/2-10,842,self.settings_rect[2]+10,100], 0)
 
-        screen.blit(self.play, (self.width/2 - (self.play_rect[2]/2), 450))
+        screen.blit(self.play, (self.width/2 - (self.play_rect[2]/2), 550))
         
         screen.blit(self.gamemode, (self.width/2 - \
-            (self.gamemode_rect[2]/2), 600))
+            (self.gamemode_rect[2]/2), 700))
 
         screen.blit(self.settings, (self.width/2 - \
-            (self.settings_rect[2]/2), 750))
+            (self.settings_rect[2]/2), 850))
 """        
 def main():
     menu = Menu(2000,1200)

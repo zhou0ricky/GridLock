@@ -1,5 +1,6 @@
 import random
 
+#CITATION: I got this from https://qwewy.gitbooks.io/pygame-module-manual/chapter1/framework.html
 class Player(object):
     def __init__(self, rootNode, grid, dictionary, color):
         self.rootNode = rootNode

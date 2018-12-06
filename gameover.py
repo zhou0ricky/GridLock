@@ -14,10 +14,13 @@ blue=(0, 0, 255)
 yellow=(255, 255, 0)
 
 # Game Fonts
+# CITATION: I got this from https://www.fontsquirrel.com/
 font = "StressGenesis.otf"
 
+#CITATION: I got this from https://qwewy.gitbooks.io/pygame-module-manual/chapter1/framework.html
 class Gameover(main.PygameGame):
 # Text Renderer
+    #CITATION: I got this code from https://nerdparadise.com/programming/pygame/part5
     @staticmethod
     def text_format(message, textFont, textSize, textColor):
         newFont=pygame.font.Font(textFont, textSize)

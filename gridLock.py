@@ -22,8 +22,10 @@ WHITE = (253,245,230)
 BLACK = (15, 15, 15)
 
 #fonts
+#CITATION: I got this from https://www.fontsquirrel.com/
 font = "StressGenesis.otf"
 
+#CITATION: I got this from https://qwewy.gitbooks.io/pygame-module-manual/chapter1/framework.html
 class gridLock(main.PygameGame):
     def __init__(self, rootNode, playerSpeed, enemySpeed, enemyNum, width=600, \
             height=400,fps=50,title="GridLock"):

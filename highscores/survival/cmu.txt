@@ -1,7 +1,7 @@
+dillard,5
 stand arrow,4
 giant bear,3
 kono dio da,2
-BLANK,0
 BLANK,0
 BLANK,0
 BLANK,0
