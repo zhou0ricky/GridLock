@@ -2,6 +2,7 @@ import pygame
 import main
 import gridLock
 import difficulty
+import gamemode
 
 # Colors
 white=(255, 255, 255)
@@ -41,6 +42,9 @@ class Menu(main.PygameGame):
     def setDifficulty(self, mode):
         self.difficulty = mode
 
+    def setGamemode(self, mode):
+        self.gamemode = mode
+        
     def keyPressed(self, key, mod):
         if key == pygame.K_UP:
             self.select = (self.select - 1) % 3
@@ -48,12 +52,11 @@ class Menu(main.PygameGame):
             self.select = (self.select + 1) % 3
         if key == pygame.K_RETURN and self.select == 0:
             game = gridLock.gridLock(10, 8, 6, 5, 2000, 1200, 150)  
-            try:
-                game.setDifficulty(self.difficulty)
-            except:
-                pass
             game.run()
         if key == pygame.K_RETURN and self.select == 1:
+            mode = gamemode.Gamemode(2000,1200)
+            mode.run()
+        if key == pygame.K_RETURN and self.select == 2:
             scale = difficulty.Difficulty(2000,1200)
             scale.run()
         if key == pygame.K_ESCAPE:
@@ -105,11 +108,11 @@ class Menu(main.PygameGame):
 
         screen.blit(self.settings, (self.width/2 - \
             (self.settings_rect[2]/2), 750))
-        
-
+"""        
 def main():
     menu = Menu(2000,1200)
     menu.run()
 
 if __name__ == '__main__':
     main()
+"""

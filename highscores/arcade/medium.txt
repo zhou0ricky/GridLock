@@ -1,0 +1,11 @@
+bigger bear,6
+bob,4
+great shark,3
+giant,1
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0

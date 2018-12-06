@@ -1,0 +1,11 @@
+cool beans,5
+big bear,1
+great job,1
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0
+BLANK,0

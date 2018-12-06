@@ -2,6 +2,7 @@ import pygame
 import main
 import gridLock
 import menu
+from settingVars import settingVars
 
 # Colors
 white=(255, 255, 255)
@@ -28,7 +29,7 @@ class Difficulty(main.PygameGame):
     def init(self):
         self.bgColor = black
         self.select = 0 
-        self.difficulty = self.text_format("Difficulty", font,175,white)
+        self.difficulty = self.text_format("Select Difficulty", font,175,white)
         self.difficulty_rect = self.difficulty.get_rect()
         self.easy=self.text_format("Easy",font,100,black)
         self.easy_rect=self.easy.get_rect()
@@ -36,30 +37,33 @@ class Difficulty(main.PygameGame):
         self.medium_rect=self.medium.get_rect()
         self.CMU=self.text_format("CMU",font,100,white)
         self.CMU_rect=self.CMU.get_rect()
+        """
         self.back=self.text_format("Back",font,100,white)
         self.back_rect=self.back.get_rect()
-        self.select = 0
+        """
 
     def keyPressed(self, key, mod):
         if key == pygame.K_UP:
-            self.select = (self.select - 1) % 4
+            self.select = (self.select - 1) % 3
         if key == pygame.K_DOWN:
-            self.select = (self.select + 1) % 4
+            self.select = (self.select + 1) % 3
         if key == pygame.K_RETURN and self.select == 0:
             home = menu.Menu(2000,1200)
-            home.setDifficulty(0)
+            settingVars.difficulty = 0
             home.run()
         if key == pygame.K_RETURN and self.select == 1:
             home = menu.Menu(2000,1200)
-            home.setDifficulty(1)
+            settingVars.difficulty = 1
             home.run()
         if key == pygame.K_RETURN and self.select == 2:
             home = menu.Menu(2000,1200)
-            home.setDifficulty(2)
+            settingVars.difficulty = 2
             home.run()
+        """
         if key == pygame.K_RETURN and self.select == 3:
             home = menu.Menu(2000,1200)
             home.run()
+        """
 
         self.setMode()
 
@@ -82,11 +86,13 @@ class Difficulty(main.PygameGame):
             self.CMU = self.text_format("CMU", font, 100, white)
         self.CMU_rect = self.CMU.get_rect()
 
+        """
         if self.select == 3:
             self.back = self.text_format("Back", font, 100, black)
         else:
             self.back = self.text_format("Back", font, 100, white)
         self.back_rect = self.back.get_rect()
+        """
 
 
     def redrawAll(self, screen):
@@ -106,9 +112,11 @@ class Difficulty(main.PygameGame):
             pygame.draw.rect(screen, white, [self.width/2 - \
                 self.CMU_rect[2]/2-10,750,self.CMU_rect[2]+10,100], 0)
 
+        """
         if self.select == 3:
             pygame.draw.rect(screen, white, [self.width/2 - \
                 self.back_rect[2]/2-10,950,self.back_rect[2]+10,100], 0)
+        """
 
         screen.blit(self.easy, (self.width/2 - (self.easy_rect[2]/2), 450))
 
@@ -118,8 +126,10 @@ class Difficulty(main.PygameGame):
         screen.blit(self.CMU, (self.width/2 - \
             (self.CMU_rect[2]/2), 750))
 
+        """
         screen.blit(self.back, (self.width/2 - \
             (self.back_rect[2]/2), 950))
+        """
 
 """
 def main():

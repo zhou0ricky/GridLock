@@ -2,6 +2,7 @@ import pygame
 import main
 import gridLock
 import menu
+from settingVars import settingVars
 
 # Colors
 white=(255, 255, 255)
@@ -16,13 +17,6 @@ yellow=(255, 255, 0)
 font = "StressGenesis.otf"
 
 class Gameover(main.PygameGame):
-    def __init__(self, score, width=2000, height=1200, fps=120, title="Gameover"):
-       super().__init__(width, height, fps, title) 
-       self.score = score
-    
-    def setDifficulty(self, mode):
-        self.difficulty = mode
-
 # Text Renderer
     @staticmethod
     def text_format(message, textFont, textSize, textColor):
@@ -32,6 +26,7 @@ class Gameover(main.PygameGame):
         return newText
 
     def init(self):
+        self.score = settingVars.score
         self.bgColor = black
         self.title = self.text_format("Score:", font, 200, white)
         self.title_rect = self.title.get_rect()
@@ -49,18 +44,12 @@ class Gameover(main.PygameGame):
         if key == pygame.K_RIGHT:
             self.select = (self.select + 1) % 2
         if key == pygame.K_RETURN and self.select == 0:
-            game = gridLock.gridLock(7, 8, 6, 5, 2000, 1200, 150)
-            try:    
-                game.setDifficulty(self.difficulty)
-            except:
-                pass
+            game = gridLock.gridLock(10, 8, 6, 5, 2000, 1200, 150)
             game.run()
         if key == pygame.K_RETURN and self.select == 1:
+            pygame.mixer.music.load("mainmusic.mp3")
+            pygame.mixer.music.play(0)
             home = menu.Menu(2000,1200)
-            try:
-                home.setDifficulty(self.difficulty)
-            except:
-                pass
             home.run()
 
         self.setMode()
