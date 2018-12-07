@@ -30,7 +30,7 @@ class Difficulty(main.PygameGame):
 
     def init(self):
         self.bgColor = black
-        self.select = 0 
+        self.select = settingVars.difficulty
         self.difficulty = self.text_format("Select Difficulty", font,175,white)
         self.difficulty_rect = self.difficulty.get_rect()
         self.easy=self.text_format("Easy",font,100,black)
@@ -39,6 +39,7 @@ class Difficulty(main.PygameGame):
         self.medium_rect=self.medium.get_rect()
         self.CMU=self.text_format("CMU",font,100,white)
         self.CMU_rect=self.CMU.get_rect()
+        self.setMode()
         """
         self.back=self.text_format("Back",font,100,white)
         self.back_rect=self.back.get_rect()

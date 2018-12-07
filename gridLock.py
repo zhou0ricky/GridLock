@@ -42,6 +42,7 @@ class gridLock(main.PygameGame):
         self.fps = 150
 
     def init(self):
+        #CITATION: I got this from https://www.youtube.com/watch?v=IdAzVhCof_4
         pygame.mixer.music.load("cavestory.mp3")
         pygame.mixer.music.play(0)
         self.dict = self.pointDict(self.rootNode)
@@ -143,7 +144,7 @@ class gridLock(main.PygameGame):
     @staticmethod
     def findSlope(p1, p2):
         if p2[0] - p1[0] == 0:
-            return (0, 1)
+            return (0.01, 1)
         slope = (p2[1] - p1[1]) / (p2[0] - p1[0])
         norm = LA.norm((1,slope))
         return (1 / norm, slope / norm)

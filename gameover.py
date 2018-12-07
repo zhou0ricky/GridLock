@@ -50,6 +50,7 @@ class Gameover(main.PygameGame):
             game = gridLock.gridLock(10, 8, 6, 5, 2000, 1200, 150)
             game.run()
         if key == pygame.K_RETURN and self.select == 1:
+            #CITATION: I got this from https://www.youtube.com/watch?v=n-aitfK7jRE
             pygame.mixer.music.load("mainmusic.mp3")
             pygame.mixer.music.play(0)
             home = menu.Menu(2000,1200)

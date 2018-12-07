@@ -43,12 +43,6 @@ class Menu(main.PygameGame):
         self.grow = 0
         self.truth = True
         self.fps = 150
-
-    def setDifficulty(self, mode):
-        self.difficulty = mode
-
-    def setGamemode(self, mode):
-        self.gamemode = mode
         
     def keyPressed(self, key, mod):
         if key == pygame.K_UP:
@@ -66,7 +60,6 @@ class Menu(main.PygameGame):
             scale.run()
         if key == pygame.K_ESCAPE:
             quit()
-
 
         self.setMode()
 
@@ -92,7 +85,7 @@ class Menu(main.PygameGame):
     def timerFired(self, dt):
         if self.truth == True:
             self.grow += 5
-            if self.grow > 200:
+            if self.grow > 173:
                 self.truth = False
         else:
             self.grow -= 5
@@ -107,7 +100,7 @@ class Menu(main.PygameGame):
         pygame.draw.circle(screen, white, (self.width//2, self.height//2), 700 + 2 *self.grow)
         pygame.draw.circle(screen, black, (self.width//2, self.height//2), 550 +  self.grow //2)
         screen.blit(self.title, (self.width/2 -\
-            (self.title_rect[2]/2), self.height // 6))
+            (self.title_rect[2]/2), 300))
         
         if self.select == 0:
             pygame.draw.rect(screen, white, [self.width/2 - \

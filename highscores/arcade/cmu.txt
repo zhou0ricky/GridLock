@@ -1,11 +1,11 @@
+ricky,9
 cool beans,5
+ricky,5
 star platinum,4
 bob ross,2
 grand chariot,2
 holy cow,2
+amazing dumbo,2
+no name,2
+ricky,2
 big bear,1
-great job,1
-bob,1
-BLANK,0
-BLANK,0
-BLANK,0

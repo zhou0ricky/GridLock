@@ -31,13 +31,14 @@ class Gamemode(main.PygameGame):
 
     def init(self): 
         self.bgColor = black
-        self.select = 0
+        self.select = settingVars.gameMode
         self.mode = self.text_format("Select Mode", font,175,white)
         self.mode_rect = self.mode.get_rect()
         self.survival=self.text_format("Survival",font,100,black)
         self.survival_rect=self.survival.get_rect()
         self.arcade=self.text_format("Arcade",font,100,white)
         self.arcade_rect=self.arcade.get_rect()
+        self.setMode()
 
     def keyPressed(self, key, mod):
         if key == pygame.K_UP:

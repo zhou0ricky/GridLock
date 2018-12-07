@@ -1,11 +1,11 @@
 bigger bear,6
+jeff,5
 bob,4
+yeah,4
+ricky,4
 great shark,3
 giant,1
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
+ai textbook,1
+david,1
 BLANK,0
 BLANK,0

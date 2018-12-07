@@ -1,11 +1,11 @@
-dillard,5
-stand arrow,4
-giant bear,3
-kono dio da,2
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
-BLANK,0
+david,81
+david,53
+kalvin,44
+gatsby,43
+urgay,43
+ethan,40
+great,32
+no name,32
+theultimate,24
+mom,23
+no name,23

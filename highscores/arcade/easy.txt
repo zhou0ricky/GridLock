@@ -1,7 +1,7 @@
+ricky,5
+no name,2
 bear,1
 big bear,1
-BLANK,0
-BLANK,0
 BLANK,0
 BLANK,0
 BLANK,0

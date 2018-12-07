@@ -5,7 +5,6 @@ def checkHighscore(newScore, filename):
     for line in text.splitlines():
         scores.append(tuple(line.split(",")))
     file1.close()
-    print(scores)
     for pair in scores:
         if newScore > int(pair[1]):
             return True
@@ -109,6 +108,7 @@ class Leaderboard(main.PygameGame):
     def keyPressed(self, key, mod):
         if key == pygame.K_RETURN:
             home = menu.Menu(2000,1200)
+            #CITATION: I got this from https://www.youtube.com/watch?v=n-aitfK7jRE
             pygame.mixer.music.load("mainmusic.mp3")
             pygame.mixer.music.play(0)
             home.run()
